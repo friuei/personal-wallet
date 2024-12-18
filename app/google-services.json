@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "694960356741",
+    "project_id": "personal-wallet-41219",
+    "storage_bucket": "personal-wallet-41219.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694960356741:android:ad1dba384d1a572c2d58ec",
+        "android_client_info": {
+          "package_name": "com.example.personalwallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClUdCHS-AzYn0fmUq2JQMVQiUkdMyYHKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

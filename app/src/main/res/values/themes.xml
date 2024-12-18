@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PersonalWallet" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here if needed. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.PersonalWallet" parent="Base.Theme.PersonalWallet" />
+</resources>
