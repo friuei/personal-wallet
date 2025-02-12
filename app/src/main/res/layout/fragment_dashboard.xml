@@ -77,6 +77,7 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
                 android:id="@+id/monthly_boxes_container"
                 android:layout_width="wrap_content"
@@ -89,79 +90,46 @@
             </LinearLayout>
         </HorizontalScrollView>
 
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/monthlyExpenseChart"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="250dp" />
 
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_gravity="bottom|end"-->
-<!--            android:layout_marginRight="15dp"-->
-<!--            android:layout_marginBottom="250dp"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:text="Expense"-->
-<!--                android:id="@+id/expense_ft_text"-->
-<!--                android:padding="5dp"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:background="@color/toolbar_color"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginRight="5dp"-->
-<!--                android:visibility="invisible"-->
-<!--                android:textAppearance="?android:textAppearanceSmall"-->
-<!--                android:layout_height="wrap_content">-->
-
-<!--            </TextView>-->
-
-<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:id="@+id/expense_ft_btn"-->
-<!--                android:layout_gravity="bottom|end"-->
-<!--                android:backgroundTint="#07bca4"-->
-<!--                android:elevation="6dp"-->
-<!--                app:fabSize="mini"-->
-<!--                android:visibility="invisible"-->
-<!--                app:pressedTranslationZ="12dp"-->
-<!--                android:src="@drawable/expense"-->
-<!--                android:layout_height="wrap_content">-->
-
-<!--            </com.google.android.material.floatingactionbutton.FloatingActionButton>-->
-
-<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginRight="15dp"
-            android:layout_marginBottom="160dp"
-            android:layout_height="wrap_content">
+            android:layout_marginBottom="250dp">
 
             <TextView
+                android:id="@+id/expense_ft_text"
                 android:layout_width="wrap_content"
-                android:text="Income"
-                android:id="@+id/income_ft_text"
-                android:textColor="@android:color/white"
-                android:padding="5dp"
-                android:background="@color/toolbar_color"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginRight="5dp"
-                android:visibility="invisible"
+                android:background="@color/toolbar_color"
+                android:padding="5dp"
+                android:text="Expense"
                 android:textAppearance="?android:textAppearanceSmall"
-                android:layout_height="wrap_content">
+                android:textColor="@android:color/white"
+                android:visibility="invisible">
 
             </TextView>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/expense_ft_btn"
                 android:layout_width="wrap_content"
-                android:id="@+id/income_ft_btn"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:backgroundTint="#07bca4"
                 android:elevation="6dp"
-                app:fabSize="mini"
+                android:src="@drawable/expense"
                 android:visibility="invisible"
-                app:pressedTranslationZ="12dp"
-                android:src="@drawable/income"
-                android:layout_height="wrap_content">
+                app:fabSize="mini"
+                app:pressedTranslationZ="12dp">
 
             </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
@@ -169,56 +137,93 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginRight="15dp"
-            android:layout_marginBottom="340dp"
-            android:layout_height="wrap_content">
+            android:layout_marginBottom="160dp">
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:text="Threshold"-->
-<!--                android:id="@+id/threshold_ft_text"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:padding="5dp"-->
-<!--                android:background="@color/toolbar_color"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginRight="5dp"-->
-<!--                android:visibility="invisible"-->
-<!--                android:textAppearance="?android:textAppearanceSmall"-->
-<!--                android:layout_height="wrap_content">-->
+            <TextView
+                android:id="@+id/income_ft_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:background="@color/toolbar_color"
+                android:padding="5dp"
+                android:text="Income"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:visibility="invisible">
 
-<!--            </TextView>-->
+            </TextView>
 
-<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:id="@+id/threshold_ft_btn"-->
-<!--                android:layout_gravity="bottom|end"-->
-<!--                android:backgroundTint="#07bca4"-->
-<!--                android:elevation="6dp"-->
-<!--                app:fabSize="mini"-->
-<!--                android:visibility="invisible"-->
-<!--                app:pressedTranslationZ="12dp"-->
-<!--                android:src="@drawable/income"-->
-<!--                android:layout_height="wrap_content">-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/income_ft_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:backgroundTint="#07bca4"
+                android:elevation="6dp"
+                android:src="@drawable/income"
+                android:visibility="invisible"
+                app:fabSize="mini"
+                app:pressedTranslationZ="12dp">
 
-<!--            </com.google.android.material.floatingactionbutton.FloatingActionButton>-->
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="340dp">
+
+            <TextView
+                android:id="@+id/threshold_ft_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:background="@color/toolbar_color"
+                android:padding="5dp"
+                android:text="Threshold"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:visibility="invisible">
+
+            </TextView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/threshold_ft_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:backgroundTint="#07bca4"
+                android:elevation="6dp"
+                android:src="@drawable/income"
+                android:visibility="invisible"
+                app:fabSize="mini"
+                app:pressedTranslationZ="12dp">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
             android:id="@+id/fb_main_plus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginBottom="80dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="80dp"
             android:backgroundTint="#0CEA15"
-            app:fabSize="normal"
-            android:src="@drawable/income"
             android:contentDescription="Press"
-            android:layout_height="wrap_content">
+            android:src="@drawable/income"
+            app:fabSize="normal">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

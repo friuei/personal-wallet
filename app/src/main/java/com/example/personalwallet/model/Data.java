@@ -6,9 +6,7 @@ public class Data {
     private String id;
     private String date;
 
-    public Data() {
-    }
-
+    public Data() {}
     public Data(int amount, String type, String id, String date) {
         this.amount = amount;
         this.type = type;

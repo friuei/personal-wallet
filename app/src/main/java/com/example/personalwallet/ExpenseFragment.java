@@ -84,7 +84,7 @@ public class ExpenseFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser mUser = mAuth.getCurrentUser();
         String uid = mUser != null ? mUser.getUid() : null;
-        mExpenseDatabase = FirebaseDatabase.getInstance("https://expense-tracker-31a94-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("ExpenseData").child(uid);
+        mExpenseDatabase = FirebaseDatabase.getInstance("https://personal-wallet-41219-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("ExpenseData").child(uid);
         recyclerView = myView.findViewById(R.id.recycler_id_expense);
         expenseTotalSum = myView.findViewById(R.id.expense_txt_result);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -103,6 +103,7 @@ public class ExpenseFragment extends Fragment {
                         exptotalvalue += data.getAmount();
                     }
                 }
+                expenseTotalSum.setText(String.valueOf(exptotalvalue));
             }
 
             @Override

@@ -1,6 +1,7 @@
 package com.example.personalwallet;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -15,10 +16,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final String CHANNEL_ID = "my_channel";
-
+    private FirebaseAuth mAuth;
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         toolbar.setTitle("Personal Wallet");
         setSupportActionBar(toolbar);
+        mAuth = FirebaseAuth.getInstance();
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -43,8 +46,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         FrameLayout frameLayout = findViewById(R.id.fragment_container);
 
         IncomeFragment incomeFragment = new IncomeFragment();
-        //ExpenseFragment expenseFragment = new ExpenseFragment();
+        ExpenseFragment expenseFragment = new ExpenseFragment();
         DashboardFragment dashboardFragment = new DashboardFragment();
+
         setFragment(dashboardFragment);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,6 +60,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     return true;
                 } else if (itemId == R.id.dashboard) {
                     setFragment(dashboardFragment);
+                    return true;
+                } else if (itemId == R.id.expense) {
+                    setFragment(expenseFragment);
                     return true;
                 }
                 return false;
@@ -88,6 +95,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             fragment = new IncomeFragment();
         } else if (itemId == R.id.dashboard) {
             fragment = new DashboardFragment();
+        } else if (itemId == R.id.expense) {
+            fragment = new ExpenseFragment();
+        } else if (itemId == R.id.logout){
+            mAuth.signOut();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
 
         if (fragment != null) {

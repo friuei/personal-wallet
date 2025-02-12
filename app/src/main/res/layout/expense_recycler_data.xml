@@ -20,7 +20,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:text="5 September 2001"
+                android:text=""
                 android:textColor="@color/expense_amount"
                 android:textStyle="bold"
                 android:id="@+id/date_txt_expense"
